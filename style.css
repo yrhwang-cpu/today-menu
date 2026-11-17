@@ -369,4 +369,22 @@ html body .site-footer div.gnrCounter {
   background: transparent !important;
 }
 
+/* 모바일에서 방문자 통계가 설정 화면을 가리지 않도록 */
+@media (max-width: 768px) {
+  .site-footer {
+    position: static !important;
+    width: 100%;
+    margin-top: 24px;
+    padding: 12px 10px 20px;
+  }
 
+  body {
+    padding-bottom: 20px;
+  }
+}
+
+/* 하단 고정 방문자 통계에 콘텐츠가 가리지 않도록 */
+body {
+  padding-bottom: 180px !important;
+  box-sizing: border-box;
+}
