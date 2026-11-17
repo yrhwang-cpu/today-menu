@@ -308,3 +308,65 @@ button:hover {
     font-size: 12px;
   }
 }
+
+/* 방문자 통계: 콘텐츠 아래, 화면 하단 배치 */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-footer {
+  position: static;
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 16px 18px;
+  text-align: center;
+  background: #FFF7EC;
+  border-top: none;
+}
+
+/* 방문자 통계: 화면 맨 아래 항상 표시 */
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 100;
+
+  margin: 0;
+  padding: 6px 12px 10px;
+  background-color: #FFF7EC;
+  text-align: center;
+  border: none;
+}
+
+/* 방문자 통계가 버튼을 가리지 않도록 */
+body {
+  padding-bottom: 90px;
+}
+/* 하단 방문자 통계 글씨 크기 */
+.site-footer p {
+  font-size: 11px;
+}
+
+/* GNRCounter 네모 테두리 제거 */
+.site-footer .gnrCounter {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+
+/* GNRCounter 테두리 제거 */
+html body .site-footer div.gnrCounter {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+
