@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오늘 뭐 먹지?</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🍚 오늘 뭐 먹지?</h1>
+  <p>고민은 짧게, 선택은 즐겁게!</p>
+  
+<div class="button-group">
+  <button class="btn-primary">
+    🎲 바로 메뉴 뽑기
+  </button>
+
+  <button class="btn-secondary">
+    ⚙️ 취향에 맞게 추천받기
+  </button>
+</div>
+
+<!-- 취향 선택 화면 -->
+<section id="filter-section" class="filter-section" hidden>
+
+  <h2>오늘은 어떤 음식이 끌려?</h2>
+  <p>취향을 선택하면 딱 맞는 메뉴를 추천해 줄게!</p>
+
+  <!-- 음식 종류 -->
+  <div class="filter-group">
+    <h3>🍚 음식 종류</h3>
+    <div class="filter-options">
+      <button type="button" class="filter-option selected" data-filter="category" data-value="all">전체</button>
+      <button type="button" class="filter-option" data-filter="category" data-value="korean">한식</button>
+      <button type="button" class="filter-option" data-filter="category" data-value="chinese">중식</button>
+      <button type="button" class="filter-option" data-filter="category" data-value="japanese">일식</button>
+      <button type="button" class="filter-option" data-filter="category" data-value="western">양식</button>
+      <button type="button" class="filter-option" data-filter="category" data-value="snack">분식</button>
+      <button type="button" class="filter-option" data-filter="category" data-value="other">기타</button>
+    </div>
+  </div>
+
+  <!-- 예산 -->
+  <div class="filter-group">
+    <h3>💰 예산</h3>
+    <div class="filter-options">
+      <button type="button" class="filter-option selected" data-filter="budget" data-value="all">상관없음</button>
+      <button type="button" class="filter-option" data-filter="budget" data-value="low">1만원 이하</button>
+      <button type="button" class="filter-option" data-filter="budget" data-value="medium">1만~2만원</button>
+      <button type="button" class="filter-option" data-filter="budget" data-value="high">2만원 이상</button>
+    </div>
+  </div>
+
+  <!-- 매운맛 -->
+  <div class="filter-group">
+    <h3>🌶️ 매운맛</h3>
+    <div class="filter-options">
+      <button type="button" class="filter-option selected" data-filter="spicy" data-value="all">상관없음</button>
+      <button type="button" class="filter-option" data-filter="spicy" data-value="mild">안 매운맛</button>
+      <button type="button" class="filter-option" data-filter="spicy" data-value="normal">보통</button>
+      <button type="button" class="filter-option" data-filter="spicy" data-value="hot">매운맛</button>
+    </div>
+  </div>
+
+  <!-- 식사 상황 -->
+  <div class="filter-group">
+    <h3>👥 식사 상황</h3>
+    <div class="filter-options">
+      <button type="button" class="filter-option selected" data-filter="situation" data-value="all">상관없음</button>
+      <button type="button" class="filter-option" data-filter="situation" data-value="alone">혼밥</button>
+      <button type="button" class="filter-option" data-filter="situation" data-value="coworker">동료와</button>
+      <button type="button" class="filter-option" data-filter="situation" data-value="date">데이트</button>
+      <button type="button" class="filter-option" data-filter="situation" data-value="quick">간단하게</button>
+    </div>
+  </div>
+
+  <button type="button" id="filter-submit">
+    ✨ 메뉴 추천받기
+  </button>
+
+</section>
+
+<!-- 추천 결과 카드 -->
+<section id="result-card" class="result-card" hidden>
+
+  <h2>오늘은 이거 먹자!</h2>
+
+  <div class="food-emoji">🍽️</div>
+
+  <h3 id="menu-name">추천 메뉴</h3>
+
+  <p id="menu-description">
+    오늘의 맛있는 선택!
+  </p>
+
+<div id="menu-tags" class="menu-tags"></div>
+
+  <button id="retry-button">
+    🔄 다른 메뉴 뽑기
+  </button>
+
+<button id="share-button" type="button">
+  🔗 결과 공유하기
+</button>
+
+</section>
+
+<script src="menus.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

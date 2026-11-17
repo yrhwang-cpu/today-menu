@@ -1,0 +1,310 @@
+
+/* 기본 화면 설정 */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #FFF7EC;
+  color: #49372C;
+  font-family: Arial, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 메인 제목 */
+h1 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+/* 소개 문구 */
+p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* 추천 버튼 */
+button {
+  background-color: #F47B39;
+  color: white;
+  border: none;
+  border-radius: 50px;
+
+  padding: 18px 32px;
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* 버튼에 마우스를 올렸을 때 */
+button:hover {
+  background-color: #E86B2D;
+}
+
+
+/* 버튼 2개를 세로로 배치 */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* 두 버튼의 공통 설정 */
+.button-group button {
+  width: 100%;
+  min-height: 56px;
+  padding: 14px 20px;
+  box-sizing: border-box;
+}
+
+/* 첫 번째 버튼 */
+.btn-primary {
+  background-color: #F47B39;
+  color: #FFFFFF;
+}
+
+/* 두 번째 버튼 */
+.btn-secondary {
+  background-color: #FFFFFF;
+  color: #F47B39;
+  border: 2px solid #F47B39;
+}
+
+/* 두 번째 버튼 마우스 효과 */
+.btn-secondary:hover {
+  background-color: #FFE1C7;
+}
+
+/* 추천 결과 카드 */
+.result-card {
+  width: 100%;
+  max-width: 360px;
+  box-sizing: border-box;
+
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 30px 24px;
+  margin-top: 28px;
+
+  box-shadow: 0 8px 24px rgba(73, 55, 44, 0.1);
+  text-align: center;
+}
+
+/* 숨겨진 결과 카드 */
+.result-card[hidden] {
+  display: none;
+}
+
+/* 결과 카드 제목 */
+.result-card h2 {
+  font-size: 22px;
+  color: #49372C;
+  margin: 0 0 20px;
+}
+
+/* 음식 이모지 */
+.food-emoji {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+/* 추천 메뉴 이름 */
+#menu-name {
+  font-size: 30px;
+  font-weight: bold;
+  color: #49372C;
+  margin: 0 0 12px;
+}
+
+/* 메뉴 설명 */
+#menu-description {
+  font-size: 15px;
+  color: #927A68;
+  margin: 0 0 24px;
+}
+
+/* 다른 메뉴 뽑기 버튼 */
+#retry-button {
+  width: 100%;
+  min-height: 56px;
+  background-color: #F47B39;
+  color: #FFFFFF;
+  border-radius: 50px;
+}
+
+/* 버튼 마우스 효과 */
+#retry-button:hover {
+  background-color: #E86B2D;
+}
+
+/* 추천 결과 등장 애니메이션 */
+@keyframes resultAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 애니메이션 실행 클래스 */
+.result-card.show-animation {
+  animation: resultAppear 0.35s ease-out both;
+}
+
+/* 모션 감소 설정을 사용하는 경우 */
+@media (prefers-reduced-motion: reduce) {
+  .result-card.show-animation {
+    animation: none;
+  }
+}
+
+/* 취향 선택 화면 */
+.filter-section {
+  width: 100%;
+  max-width: 440px;
+  box-sizing: border-box;
+
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 28px 24px;
+  margin-top: 28px;
+
+  box-shadow: 0 8px 24px rgba(73, 55, 44, 0.1);
+  text-align: left;
+}
+
+/* 숨겨진 화면은 표시하지 않기 */
+.filter-section[hidden] {
+  display: none;
+}
+
+/* 화면 제목 */
+.filter-section h2 {
+  font-size: 22px;
+  margin: 0 0 8px;
+  color: #49372C;
+}
+
+.filter-section > p {
+  font-size: 14px;
+  color: #927A68;
+  margin: 0 0 28px;
+}
+
+/* 조건별 그룹 */
+.filter-group {
+  margin-bottom: 24px;
+}
+
+.filter-group h3 {
+  font-size: 16px;
+  margin: 0 0 12px;
+  color: #49372C;
+}
+
+/* 선택 버튼 배치 */
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* 선택 칩 기본 디자인 */
+.filter-option {
+  background-color: #FFF7EC;
+  color: #49372C;
+  border: 1px solid #EADFD4;
+  border-radius: 50px;
+
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 44px;
+}
+
+/* 선택된 칩 */
+.filter-option.selected {
+  background-color: #FFE1C7;
+  color: #A94B1B;
+  border-color: #F47B39;
+  font-weight: bold;
+}
+
+/* 선택 칩 마우스 효과 */
+.filter-option:hover {
+  background-color: #FFE1C7;
+}
+
+/* 조건 선택 완료 버튼 */
+#filter-submit {
+  width: 100%;
+  min-height: 56px;
+  margin-top: 8px;
+  background-color: #F47B39;
+  color: #FFFFFF;
+}
+
+/* 작은 모바일 화면 */
+@media (max-width: 480px) {
+  .filter-section {
+    padding: 24px 18px;
+  }
+
+  .filter-option {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
+
+/* 숨긴 버튼은 표시하지 않기 */
+#retry-button[hidden] {
+  display: none;
+}
+
+/* 추천 결과 상세 정보 태그 */
+
+.menu-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 18px 0 22px;
+}
+
+.menu-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: #FFE8D6;
+  color: #A34F22;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* 작은 모바일 화면 대응 */
+@media (max-width: 480px) {
+  .menu-tags {
+    gap: 6px;
+  }
+
+  .menu-tag {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+}
