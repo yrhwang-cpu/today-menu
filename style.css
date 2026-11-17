@@ -385,6 +385,17 @@ html body .site-footer div.gnrCounter {
 
 /* 하단 고정 방문자 통계에 콘텐츠가 가리지 않도록 */
 body {
-  padding-bottom: 180px !important;
+  padding-bottom: 250px !important;
   box-sizing: border-box;
+}
+
+/* 메뉴 다시 뽑기 / 결과 공유 버튼 간격 */
+#retry-button {
+  display: block;
+  margin: 24px auto 0;
+}
+
+#share-button {
+  display: block;
+  margin: 16px auto 0;
 }
