@@ -11,6 +11,8 @@ const menuDescription = document.querySelector("#menu-description");
 const menuTags = document.querySelector("#menu-tags");
 const foodEmoji = document.querySelector(".food-emoji");
 const retryButton = document.querySelector("#retry-button");
+const shareButton = document.querySelector("#share-button");
+
 
 /* 현재 추천 조건과 직전 메뉴 */
 let currentFilters = null;
